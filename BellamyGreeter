@@ -1,0 +1,26 @@
+# greeter colors for foreground text
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+MAGENTA='\033[0;95m'
+CYAN='\033[0;36m'
+ORANGE='\033[0;33m'
+YELLOW='\033[0;93m'
+NC='\033[0m' 
+# can be changed to reflect customizations or additional items
+GREETER="""${MAGENTA}⣿${CYAN}¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤${MAGENTA}⣿
+|         __          |
+|      -=(¤ '.        |
+|         '.-.\       |
+|         /|  \\\\\      |
+|         '|  ||      |
+|          ▄\_):,     |
+⣿${CYAN}¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤${MAGENTA}⣿
+${YELLOW}>> Hi, welcome back, $USER  <<
+${CYAN}Date>${YELLOW} $(date +"%Y-%m-%d") @ $(date +"%H:%M:%S")
+${CYAN}Uptime>${YELLOW} $(uptime -p)
+${CYAN}Bash[#]>${YELLOW} $(ps -C bash --no-headers | wc -l)
+${CYAN}Processes[#]> ${YELLOW}$(ps -e --no-headers | wc -l)
+${CYAN}Ram>${YELLOW} $(free -m | awk '/^Mem:/ {print $3}')mb${CYAN}/${YELLOW}$(free -m | awk '/^Mem:/ {print $2}')mb
+---
+"""
+printf "${GREETER}"
